@@ -1,4 +1,4 @@
-const { Categoria } = require('../models');
+const { Empresa } = require('../models');
 const Role = require('../models/role');
 const usuario = require('../models/usuario');
 const Producto = require('../models/producto');
@@ -23,9 +23,9 @@ const IdExiste =async(id)=>{
      }
 };
 
-const existeCategoriaPorId =async(id)=>{
-    const existeCategoria = await Categoria.findById(id);
-    if (!existeCategoria){
+const existeEmpresaPorId =async(id)=>{
+    const existeEmpresa = await Empresa.findById(id);
+    if (!existeEmpresa){
         throw new Error(`El id ${id} no existe en la base de datos`) 
      }
 };
@@ -48,4 +48,4 @@ const coleccionesPermitidas = (coleccion='', colecciones=[])=>{
     return true;
 }
 
-module.exports = {esRoleValido, CorreoExiste, IdExiste, existeCategoriaPorId, existeProductoPorId, coleccionesPermitidas}
+module.exports = {esRoleValido, CorreoExiste, IdExiste, existeEmpresaPorId, existeProductoPorId, coleccionesPermitidas}

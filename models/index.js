@@ -1,4 +1,4 @@
-const Categoria =require('./categoria')
+const Empresa =require('./empresa')
 const Producto =require('./producto')
 const Role =require('./role')
 const Server =require('./server')
@@ -6,7 +6,7 @@ const Usuario =require('./usuario')
 
 
 module.exports = {
-    Categoria,
+    Empresa,
     Producto,
     Role,
     Server,

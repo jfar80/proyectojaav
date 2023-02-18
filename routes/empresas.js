@@ -3,53 +3,53 @@ const {check}=require('express-validator');
 
 const { validarCampos } = require('../middlewares/validar-campos');
 const { validarJWT } = require('../middlewares/validar-jwt');
-const { crearCategoria, obtenerCategorias, obtenerCategoria, actualizarCategoria, borrarCategoria } = require('../controllers/categorias');
-const { existeCategoriaPorId } = require('../helpers/db-validators');
+const { crearEmpresa, obtenerEmpresas, obtenerEmpresa, actualizarEmpresa, borrarEmpresa } = require('../controllers/empresas');
+const { existeEmpresaPorId } = require('../helpers/db-validators');
 const { esAdminRole } = require('../middlewares/validar-roles');
 
 
 
 const router = Router();
 
-//optener todas las categorias - publico
-router.get('/', obtenerCategorias);
+//optener todas las empresas - publico
+router.get('/', obtenerEmpresas);
 
-//optener una categoria por id - publico 
+//optener una empresa por id - publico 
 
 router.get('/:id',[
     check('id', 'No es un Id de Mongo valido').isMongoId(),
-    check('id').custom(existeCategoriaPorId),
-    validarCampos], obtenerCategoria);
+    check('id').custom(existeEmpresaPorId),
+    validarCampos], obtenerEmpresa);
    
 
-//crear una categoria - privado - cualquier rol, cualquier persona con un token valido
+//crear una empresa - privado - cualquier rol, cualquier persona con un token valido
 router.post('/', [
     validarJWT,
     check('nombre', 'El nombre es obligatorio').not().isEmpty(), 
     validarCampos 
-    ], crearCategoria); 
+    ], crearEmpresa); 
 
 
 //actualizar un registro por este id
 router.put('/:id',[
     validarJWT,
     check('nombre', 'El nombre es obligatorio').not().isEmpty(), 
-    check('id').custom(existeCategoriaPorId),
+    check('id').custom(existeEmpresaPorId),
     validarCampos
-    ], actualizarCategoria);
+    ], actualizarEmpresa);
 
 
 //Eliminar un registro por este id - cualquiera con token valido
 
 
-//borrar una categoria - admin
+//borrar una empresa - admin
 router.delete('/:id',[
     validarJWT,
     esAdminRole,
     check('id', 'No es un Id de Mongo valido').isMongoId(),
-    check('id').custom(existeCategoriaPorId),
+    check('id').custom(existeEmpresaPorId),
     validarCampos
-    ], borrarCategoria);
+    ], borrarEmpresa);
 
 
 module.exports = router;
