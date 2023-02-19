@@ -5,6 +5,7 @@ const Server =require('./server')
 const Usuario =require('./usuario')
 const Categoria =require('./categoria')
 const Empleado =require('./empleado')
+const EmpleadoEmpresa = require('./empleadoEmpresa')
 
 
 module.exports = {
@@ -14,5 +15,7 @@ module.exports = {
     Server,
     Usuario,
     Categoria,
-    Empleado
+    Empleado,
+    EmpleadoEmpresa
+
 }
