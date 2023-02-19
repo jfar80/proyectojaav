@@ -19,7 +19,8 @@ class Server{
         empresas:'/api/empresas',
         productos:'/api/productos',
         categorias:'/api/categorias',
-        uploads:'/api/uploads'   
+        uploads:'/api/uploads',   
+        empleados:'/api/empleados'   
      }
      
 
@@ -63,6 +64,7 @@ class Server{
         this.app.use(this.paths.productos,require('../routes/productos'));
         this.app.use(this.paths.uploads,require('../routes/uploads'));
         this.app.use(this.paths.categorias,require('../routes/categorias'));
+        this.app.use(this.paths.empleados,require('../routes/empleados'));
        
         
 }

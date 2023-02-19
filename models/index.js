@@ -4,6 +4,7 @@ const Role =require('./role')
 const Server =require('./server')
 const Usuario =require('./usuario')
 const Categoria =require('./categoria')
+const Empleado =require('./empleado')
 
 
 module.exports = {
@@ -12,5 +13,6 @@ module.exports = {
     Role,
     Server,
     Usuario,
-    Categoria
+    Categoria,
+    Empleado
 }
