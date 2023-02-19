@@ -17,7 +17,7 @@ const EmpleadoEmpresaSchema = new Schema({
     empresa:{
         type: Schema.Types.ObjectId,
         ref:'Empresa',
-        required: true
+        required: true   
     },    
     
 });
