@@ -99,9 +99,9 @@ const actualizarEmpleadoEmpresa = async(req, res=response)=> {
 const borrarEmpleadoEmpresa = async(req, res=response) => {
 
     const {id} =req.params;
-    const EmpleadoEmpresaBorrado = await EmpleadoEmpresa.findByIdAndUpdate(id, {estado:false}, {new:true});
+    const empleadoEmpresaBorrado = await EmpleadoEmpresa.findByIdAndUpdate(id, {estado:false}, {new:true});
 
-    res.json(EmpleadoEmpresaBorrado);
+    res.json(empleadoEmpresaBorrado);
 
 }
 

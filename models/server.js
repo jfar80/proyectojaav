@@ -22,6 +22,8 @@ class Server{
         uploads:'/api/uploads',   
         empleados:'/api/empleados',   
         empleadosEmpresas:'/api/empleadosempresas',   
+        productosEmpresas:'/api/productosempresas',   
+        usuariosEmpresas:'/api/usuariosempresas',   
      }
      
 
@@ -67,6 +69,8 @@ class Server{
         this.app.use(this.paths.categorias,require('../routes/categorias'));
         this.app.use(this.paths.empleados,require('../routes/empleados'));
         this.app.use(this.paths.empleadosEmpresas,require('../routes/empleadosEmpresas'));
+        this.app.use(this.paths.productosEmpresas,require('../routes/productosEmpresas'));
+        this.app.use(this.paths.usuariosEmpresas,require('../routes/usuariosEmpresas'));
        
         
 }

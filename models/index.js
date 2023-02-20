@@ -6,6 +6,8 @@ const Usuario =require('./usuario')
 const Categoria =require('./categoria')
 const Empleado =require('./empleado')
 const EmpleadoEmpresa = require('./empleadoEmpresa')
+const ProductoEmpresa = require('./productoEmpresa')
+const UsuarioEmpresa = require('./usuarioempresa')
 
 
 module.exports = {
@@ -16,6 +18,8 @@ module.exports = {
     Usuario,
     Categoria,
     Empleado,
-    EmpleadoEmpresa
+    EmpleadoEmpresa,
+    ProductoEmpresa,
+    UsuarioEmpresa
 
 }

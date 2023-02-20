@@ -54,6 +54,14 @@ const existeEmpleadoPorId =async(id)=>{
      }
 };
 
+const existeUsuarioPorId =async(id)=>{
+    const existeUsuario = await usuario.findById(id);
+    
+    if (!existeUsuario){
+        throw new Error(`El id ${id} no existe en la base de datos`) 
+     }
+};
+
 //validar colecciones permitidas
 
 const coleccionesPermitidas = (coleccion='', colecciones=[])=>{
@@ -72,5 +80,6 @@ module.exports = {esRoleValido,
                   existeProductoPorId, 
                   coleccionesPermitidas, 
                   existeCategoriaPorId,
-                  existeEmpleadoPorId
+                  existeEmpleadoPorId,
+                  existeUsuarioPorId
                 }
